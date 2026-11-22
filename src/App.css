@@ -1,0 +1,504 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('assets/lucid-origin_Create_a_high-resolution_ultra-aesthetic_desktop_website_background_wallpaper_fo-0.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  font-family: 'DM Sans', sans-serif;
+  color: #49453f;
+  position: relative;
+  min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(248, 245, 239, 0.5);
+  pointer-events: none;
+  z-index: 0;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.planner {
+  max-width: 1450px;
+  margin: auto;
+  padding: 25px 45px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 22px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.65);
+}
+
+.brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
+  font-weight: 700;
+  text-align: center;
+  color: #25211e;
+  letter-spacing: -1px;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding: 35px 0 30px;
+}
+
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: 800;
+  color: #b8795c;
+  margin-bottom: 12px;
+}
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 68px;
+  font-weight: 700;
+  color: #40352d;
+  letter-spacing: -1.5px;
+  text-align: left;
+  line-height: 1.05;
+}
+
+.subtitle {
+  color: #776c61;
+  margin-top: 12px;
+  font-size: 15px;
+}
+
+.progress-card {
+  width: 290px;
+  flex-shrink: 0;
+  padding: 22px;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 9px;
+  box-shadow: 0 5px 20px rgba(70, 50, 30, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+.progress-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  font-weight: 700;
+  color: #51483f;
+}
+
+.progress-top strong {
+  color: #b8795c;
+  font-size: 15px;
+}
+
+.progress-track {
+  height: 8px;
+  background: #eee3d8;
+  border-radius: 20px;
+  margin: 16px 0 11px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #c58c6c;
+  border-radius: 20px;
+  transition: width 0.3s ease;
+}
+
+.progress-card p {
+  font-size: 13px;
+  color: #968575;
+}
+
+.add-section {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 9px;
+  padding: 23px;
+  margin-bottom: 22px;
+  box-shadow: 0 5px 20px rgba(70, 50, 30, 0.07);
+  backdrop-filter: blur(8px);
+}
+
+.add-heading {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 17px;
+}
+
+.add-heading span {
+  color: #bd896d;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.add-heading h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #51483f;
+}
+
+.task-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.task-form input,
+.task-form select {
+  padding: 15px;
+  background: #faf8f4;
+  border: 1px solid #e9dfd3;
+  border-radius: 7px;
+  outline: none;
+  color: #62584e;
+  font-size: 14px;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.task-form input {
+  flex: 1;
+  min-width: 180px;
+}
+
+.task-form input::placeholder {
+  color: #95897d;
+  font-size: 14px;
+}
+
+.task-form input:focus,
+.task-form select:focus {
+  border-color: #bd896d;
+  box-shadow: 0 0 0 3px rgba(189, 137, 109, 0.12);
+}
+
+.task-form select {
+  min-width: 120px;
+  cursor: pointer;
+}
+
+.task-form button {
+  background: #bd896d;
+  color: white;
+  padding: 15px 23px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  transition: 0.2s;
+}
+
+.task-form button:hover {
+  background: #a8755b;
+  transform: translateY(-2px);
+}
+
+.date-section {
+  display: block;
+  margin: 0 0 20px;
+}
+
+.date-section h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: #40352d;
+  text-align: left;
+}
+
+.week-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.day-card {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 9px;
+  overflow: hidden;
+  min-height: 245px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 18px rgba(70, 50, 30, 0.08);
+  transition: transform 0.25s, box-shadow 0.25s;
+  backdrop-filter: blur(6px);
+}
+
+.day-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(70, 50, 30, 0.13);
+}
+
+.day-header {
+  background: #e8b99e;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.day-header h3 {
+  font-size: 16px;
+  color: #514034;
+  font-weight: 700;
+}
+
+.day-header span {
+  font-size: 12px;
+  color: #766052;
+}
+
+.day-1 .day-header {
+  background: #eac59e;
+}
+
+.day-2 .day-header {
+  background: #e9d497;
+}
+
+.day-3 .day-header {
+  background: #c5d6b5;
+}
+
+.day-4 .day-header {
+  background: #dfb3aa;
+}
+
+.day-5 .day-header {
+  background: #bdcce0;
+}
+
+.day-6 .day-header {
+  background: #d5c0dd;
+}
+
+.today-tag {
+  background: #708968;
+  color: white !important;
+  padding: 6px 9px;
+  border-radius: 4px;
+  font-size: 10px !important;
+  font-weight: 700;
+}
+
+.day-body {
+  padding: 15px 13px;
+  flex: 1;
+}
+
+.task-row {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 0;
+  border-bottom: 1px solid #eee8df;
+}
+
+.task-checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: #bd896d;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.priority-dot {
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.task-text {
+  font-size: 13px;
+  color: #62584e;
+  flex: 1;
+  overflow-wrap: anywhere;
+}
+
+.task-text.done {
+  text-decoration: line-through;
+  color: #aaa197;
+}
+
+.delete-btn {
+  border: none;
+  background: transparent;
+  color: #b99d8c;
+  font-size: 19px;
+  cursor: pointer;
+  opacity: 0;
+  transition: 0.2s;
+}
+
+.task-row:hover .delete-btn {
+  opacity: 1;
+}
+
+.delete-btn:hover {
+  color: #d46e62;
+}
+
+.empty-day {
+  font-size: 13px;
+  color: #a99e91;
+  text-align: center;
+  padding: 28px 0;
+}
+
+.day-footer {
+  padding: 13px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-top: 1px solid #eee8df;
+}
+
+.day-progress {
+  height: 6px;
+  background: #eee7df;
+  border-radius: 20px;
+  flex: 1;
+  overflow: hidden;
+}
+
+.day-progress div {
+  height: 100%;
+  background: #bd896d;
+  border-radius: 20px;
+  transition: width 0.3s ease;
+}
+
+.day-footer span {
+  font-size: 12px;
+  color: #968575;
+}
+
+footer {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: 65px;
+  margin-top: 35px;
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.7);
+  color: #75675b;
+  font-size: 11px;
+}
+
+.footer-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #625347;
+}
+
+.footer-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #40352d;
+}
+
+
+@media (max-width: 600px) {
+  .planner {
+    padding: 18px;
+  }
+
+  .brand {
+    font-size: 30px;
+  }
+
+  .hero {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    padding: 28px 0;
+  }
+
+  .hero h1 {
+    font-size: 45px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+  }
+
+  .progress-card {
+    width: 100%;
+  }
+
+  .week-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .task-form {
+    flex-direction: column;
+  }
+
+  .task-form input,
+  .task-form select,
+  .task-form button {
+    width: 100%;
+  }
+
+  .add-heading h3 {
+    font-size: 18px;
+  }
+
+  .date-section h2 {
+    font-size: 27px;
+  }
+
+  footer {
+    justify-content: space-between;
+  }
+
+  .footer-center {
+    position: static;
+    transform: none;
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .footer-brand {
+    font-size: 16px;
+  }
+}
